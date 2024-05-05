@@ -35,4 +35,25 @@ window.onload = () => {
   showNav.addEventListener("click", ()=> {
     document.getElementById("nav").classList.toggle("hidden");
   })
+  const upload = document.getElementById("upload");
+  upload.addEventListener("change",(event)=>{
+    const files = event.target.files;
+    const preview = document.getElementById('image-preview');
+    preview.innerHTML = ''; // Clear previous previews
+
+    for (let i = 0; i < files.length; i++) {
+      const reader = new FileReader();
+      const file = files[i];
+
+      reader.onload = function(e) {
+        const image = new Image();
+        image.src = e.target.result;
+        image.style.width = "200px"
+        image.style.height = "200px"
+        preview.appendChild(image);
+      }
+
+      reader.readAsDataURL(file);
+    }
+  })
 }
