@@ -14,32 +14,33 @@
   <title>Document</title>
 </head>
 
-<body dir="rtl" lang="ar" class="fontCairo">
-  <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end sm:gap-16 bg-primary text-white">
+<body dir="rtl" lang="ar" class=" fontCairo">
+  <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end  bg-primary text-white">
     <div class="hidden sm:flex gap-6">
       <img src="./images/messageIcon.png" class="w-[24px] h-[24px]" alt="" srcset="" />
       <img src="./images/notifucation.png" class="w-[24px] h-[24px]" alt="" />
     </div>
     <div class="flex gap-5">
       <details class="relative" dir="ltr" lang="ar">
-        <summary class="flex items-center gap-3 sm:w-[150px]">
+        <summary id="nameCurrency" class="flex items-center gap-3 sm:w-[150px]">
           <i class="fa-solid fa-chevron-down"></i>SAR
           <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
         </summary>
         <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
           <li class="flex items-center gap-3 text-xl">
-            <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+            <button data-currency='SAR <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />' class="chooseCuurrency flex gap-[0.5rem] items-center">SAR<img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" /></button>
           </li>
           <li class="flex items-center gap-3 text-xl">
-            <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+            <button data-currency='SAR2 <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />' class="chooseCuurrency flex gap-[0.5rem] items-center">SAR2<img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" /></button>
           </li>
         </ul>
       </details>
       <div class="w-[2px] h-[30px] bg-white"></div>
       <details class="relative" dir="ltr" lang="ar">
-        <summary><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
-        <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
-          <li><a>السعوديه</a></li>
+        <summary id="nameCountry"><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
+        <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[0.5rem]">
+          <li><button data-name="السعوديه" class="chooseCountry">السعوديه</button></li>
+          <li><button data-name="السعوديه 2" class="chooseCountry">السعوديه 2</button></li>
         </ul>
       </details>
     </div>
@@ -47,19 +48,22 @@
   <section class="py-[2rem] flex flex-col lg:flex-row justify-center gap-10 items-center">
     <div class="flex w-full lg:w-auto justify-around lg:justify-start gap-10 items-center">
       <div class="flex items-end">
-        <h1 class="text-[3rem] font-bold">تشاليح</h1>
+        <a href="" class="cursor-pointer text-[3rem] font-bold">تشاليح</a>
         <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
       </div>
       <div class="flex items-center gap-5">
-        <button class="hover:text-yellow-200">
-          <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
-        </button>
-        <button>
+        <div class="indicator">
+          <span class="indicator-item badge bg-primary-content left-full">9</span>
+          <a class="hover:text-yellow-200">
+            <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
+          </a>
+        </div>
+        <a>
           <i class="text-3xl fa-regular fa-heart hover:text-primary-content"></i>
-        </button>
+        </a>
       </div>
     </div>
-    <div class="hidden lg:block lg:w-[30%]">
+    <div class="hidden relative lg:block lg:w-[30%]">
       <div class="join w-[100%]">
         <div class="indicator">
           <button class="btn btn-primary join-item">
@@ -68,9 +72,21 @@
         </div>
         <div class="w-[100%]">
           <div class="">
-            <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+            <input id="search" class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
           </div>
         </div>
+      </div>
+      <div id="showSearch" class="hidden absolute w-full shadow-lg bg-white ">
+        <ul class="flex flex-col">
+          <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+            باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+            <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+              باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+              <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+                <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                  باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+        </ul>
       </div>
     </div>
     <div class="flex gap-5">
@@ -81,7 +97,7 @@
         انشاء حساب
       </button>
     </div>
-    <div class="block lg:hidden ">
+    <div class="block relative lg:hidden">
       <div class="join w-[100%]">
         <div class="indicator">
           <button class="btn btn-primary join-item">
@@ -90,20 +106,32 @@
         </div>
         <div class="w-[100%]">
           <div class="">
-            <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+            <input id="search2" class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
           </div>
         </div>
+      </div>
+      <div id="showSearch2" class="hidden absolute w-full shadow-lg bg-white ">
+        <ul class="flex flex-col">
+          <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+            باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+            <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+              باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+              <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+                <li class=""><button class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                  باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]" alt=""></button></li>
+        </ul>
       </div>
     </div>
   </section>
   <nav class="bg-primary text-white flex justify-center gap-3 mg:gap-10 lg:gap-36 p-[1rem]">
-    <ul class="flex gap-3 sm:gap-5 md:gap-10 lg:gap-16 items-center">
-      <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
+    <ul class="flex gap-2 sm:gap-5 md:gap-10 lg:gap-16 items-center">
+      <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
         تشاليح سيارات
       </li>
-      <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
-      <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
-      <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
+      <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
+      <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
+      <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
     </ul>
     <button
       class="hidden sm:block btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
@@ -116,7 +144,7 @@
       + اضافه اعلان
     </button>
   </div>
-  <section class="pt-[3.5rem] px-[2rem] md:px-[4rem]">
+  <section id="section1" class="section pt-[3.5rem] px-[2rem] md:px-[4rem]">
     <div>
       <h1 class="xl:text-center xxl:text-right text-[1.5rem] md:text-[2rem]">قم بتحديد طلبك بناء علي الاختيارات التاليه
       </h1>
@@ -126,89 +154,95 @@
         <div class="flex flex-col gap-[3rem]">
           <h1 class="text-[1.3rem] md:text-[1.5rem]">نوع النقل</h1>
           <div class="flex gap-4">
-            <button class="btn bg-primary-content sm:px-[2rem] w-1/2 md:w-[300px] sm:text-[20px] font-bold">
-              نقل عام
+            <button id="publicTransportBtn"
+              class="btn bg-primary-content sm:px-[2rem] w-1/2 md:w-[300px] sm:text-[20px] font-bold">
+              <i class="fa-solid fa-truck"></i> نقل عام
             </button>
-            <button class="btn bg-transparent sm:px-[2rem] w-1/2 md:w-[300px] sm:text-[20px] font-bold">
-              نقل خاص
+            <button id="privateTransfer"
+              class="btn bg-transparent sm:px-[2rem] w-1/2 md:w-[300px] sm:text-[20px] font-bold">
+              <i class="fa-solid fa-car"></i> نقل خاص
             </button>
           </div>
         </div>
-        <div
+        <div id="logocars"
           class="rounded-xl mt-[4rem] w-full flex flex-wrap justify-center items-center gap-2 sm:gap-11 shadow-lg py-[2rem] border border-[##E4E7EE]">
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="0" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/Rating.png" class="sm:w-[60px] sm:h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="1" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/z.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="2" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/bmw.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="3" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/merc.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="4" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/fiat.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="5" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/merc.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="6" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/fiat.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="7" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/z.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="8" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/Rating.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="9" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/bmw.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="10" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/Rating.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="11" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/z.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="12" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/bmw.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="13" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/merc.png" class="w-[60px] h-[60px]" alt="" />
           </button>
-          <button class="btn h-auto bg-transparent py-[26px] px-[26px]">
+          <button data-car="14" class="logoCarButton btn h-auto bg-transparent py-[26px] px-[26px]">
             <img src="./images/fiat.png" class="w-[60px] h-[60px]" alt="" />
           </button>
         </div>
-        <button class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
-          عرض المزيد<i class="fa-solid fa-chevron-down"></i>
+        <button id="showMoreCarsLogo"
+          class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
+          عرض المزيد <i class="fa-solid fa-chevron-down"></i>
         </button>
         <ul class="flex flex-wrap gap-4 md:gap-10 mt-[5rem]">
           <li>
-            <button class="btn md:w-[192px] bg-primary-content sm:text-[1.3rem] rounded-xl font-bold">
-              قطع خارجيه
+            <button id="externalPartsCarBtn"
+              class="btn md:w-[192px] bg-primary-content sm:text-[1.3rem] rounded-xl font-bold">
+              <img src="./images/doorCar.png" alt="" srcset=""> قطع خارجيه
             </button>
           </li>
           <li>
-            <button class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
-              قطع داخليه
+            <button id="interiorPartsCarBtn"
+              class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
+              <img src="./images/carChair.png" alt="" srcset=""> قطع داخليه
             </button>
           </li>
           <li>
-            <button class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
-              اكسسوارات
+            <button id="accessoriesCarBtn"
+              class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
+              <i class="fa-solid fa-key"></i> اكسسوارات
             </button>
           </li>
           <li>
-            <button class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
-              مصدوم
+            <button id="carHitBtn" class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
+              <i class="fa-solid fa-car-burst"></i> مصدوم
             </button>
           </li>
           <li>
-            <button class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
-              قديم
+            <button id="oldCarBtn" class="btn md:w-[192px] bg-transparent sm:text-[1.3rem] rounded-xl font-bold">
+              <i class="fa-solid fa-car-side"></i> قديم
             </button>
           </li>
         </ul>
@@ -217,7 +251,7 @@
           <div class="flex gap-2 sm:gap-7 mt-[3rem]">
             <details class="w-1/2">
               <summary class="btn w-full bg-transparent sm:text-[1.3rem]">
-                المكينه<i class="fa-solid fa-chevron-down"></i>
+                <img src="./images/engine1.png" alt="" srcset=""> المكينه<i class="fa-solid fa-chevron-down"></i>
               </summary>
               <ul>
                 <li><a>المكينه</a></li>
@@ -226,7 +260,7 @@
             </details>
             <details class="w-1/2">
               <summary class="btn w-full bg-transparent sm:text-[1.3rem]">
-                مكينه السياره<i class="fa-solid fa-chevron-down"></i>
+                <img src="./images/engine2.png" alt=""> مكينه السياره<i class="fa-solid fa-chevron-down"></i>
               </summary>
               <ul>
                 <li><a>مكينه السياره</a></li>
@@ -234,12 +268,87 @@
             </details>
           </div>
           <div class="mt-[4rem]">
-            <img src="./images/Image1.png" alt="" />
+            <!-- Image Map Generated by http://www.image-map.net/ -->
+            <img src="./images/Image1.png" usemap="#image-map">
+
+            <map name="image-map">
+              <area target="_blank" alt="" title="" href="/index2.html"
+                coords="164,713,169,731,158,740,158,775,119,800,86,717" shape="poly">
+              <area target="_blank" alt="" title="" href="/index3.html"
+                coords="96,233,143,266,143,287,157,304,148,319,77,321" shape="poly">
+              <area target="_blank" alt="" title="" href="/index4.html" coords="57,474,84,578" shape="rect">
+              <area target="_blank" alt="" title="" href="/index5.html"
+                coords="108,475,136,470,146,451,248,450,269,520,267,612,216,610,122,616" shape="poly">
+              <area target="_blank" alt="" title="" href="/index6.html" coords="327,865,85" shape="circle">
+              <area target="_blank" alt="" title="" href="/index6.html" coords="1216,844,78" shape="circle">
+              <area target="_blank" alt="" title="" href="/index6.html" coords="1199,156,80" shape="circle">
+              <area target="_blank" alt="" title="" href="/index6.html" coords="327,126,81" shape="circle">
+              <area target="_blank" alt="" title="" href="/index7.html" coords="1354,222,1394,222,1421,319,1372,301"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index7.html" coords="1435,699,1408,796,1368,792,1387,719"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index8.html"
+                coords="676,287,552,282,406,247,279,199,157,165,195,225,144,450,356,310,670,314" shape="poly">
+              <area target="_blank" alt="" title="" href="/index9.html"
+                coords="281,349,372,356,365,478,410,494,421,522,373,546,368,595,376,654,352,686,321,703,297,698,275,674"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index10.html"
+                coords="449,357,544,330,641,323,693,370,700,532,697,679,570,705,441,671" shape="poly">
+              <area target="_blank" alt="" title="" href="/index11.html" coords="600,778,697,773,691,920,513,938"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index11.html" coords="843,772,1018,775,1015,915,800,923"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index11.html" coords="528,115,705,122,708,274,615,269"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index11.html"
+                coords="784,148,994,120,1012,242,995,300,867,298,822,267" shape="poly">
+              <area target="_blank" alt="" title="" href="/index12.html"
+                coords="735,359,801,336,915,340,942,380,936,446,918,468,826,478,722,467" shape="poly">
+              <area target="_blank" alt="" title="" href="/index12.html"
+                coords="721,602,771,575,830,568,919,572,942,690,826,705,725,695" shape="poly">
+              <area target="_blank" alt="" title="" href="/index13.html"
+                coords="994,366,1036,349,1086,380,1077,651,1040,690,980,685" shape="poly">
+              <area target="_blank" alt="" title="" href="/index14.html"
+                coords="728,505,726,546,866,543,954,555,950,482" shape="poly">
+              <area target="_blank" alt="" title="" href="/index15.html"
+                coords="1105,402,1162,399,1169,322,1243,309,1247,343,1279,399,1365,433,1370,561,1385,603,1355,629,1228,637,1257,703,1192,700,1116,606"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index16.html"
+                coords="940,316,965,311,984,333,972,381,946,381" shape="poly">
+              <area target="_blank" alt="" title="" href="/index17.html"
+                coords="1387,425,1484,423,1560,461,1491,609,1562,565,1399,615" shape="poly">
+              <area target="_blank" alt="" title="" href="/index18.html" coords="1054,318,1157,309,1154,352,1055,349"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index19.html" coords="1070,207,50" shape="circle">
+              <area target="_blank" alt="" title="" href="/index20.html" coords="958,35,1002,37,1047,97,1030,132,964,87"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index21.html"
+                coords="996,1028,1070,1005,1077,910,994,948,1077,928,992,963,1072,965,982,966" shape="poly">
+              <area target="_blank" alt="" title="" href="/index22.html" coords="199,675,255,654,252,699,227,703"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index23.html" coords="725,252,802,248,809,277,707,319"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index24.html" coords="724,740,818,790,811,811,736,807"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index25.html"
+                coords="445,225,527,195,549,267,544,210,560,277,522,264" shape="poly">
+              <area target="_blank" alt="" title="" href="/index26.html" coords="465,738,589,755,527,818" shape="poly">
+              <area target="_blank" alt="" title="" href="/index27.html" coords="600,948,656,951,643,972,584,982"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index28.html" coords="597,69,657,82,636,104,593,103"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index29.html" coords="1051,803,1091,799,1098,869,1050,879"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index30.html" coords="873,104,944,117,944,141,871,134"
+                shape="poly">
+              <area target="_blank" alt="" title="" href="/index31.html" coords="870,941,957,941,953,966,875,968"
+                shape="poly">
+            </map>
           </div>
         </div>
         <div class="mt-[4rem]">
           <h1 class="text-[1.5rem]">المدينه</h1>
-          <div class="mt-[2.5rem] flex flex-wrap">
+          <div id="city" class="mt-[2.5rem] flex flex-wrap">
             <label class="gap-2 cursor-pointer justify-start label w-[25%]">
               <input type="checkbox" checked
                 class="checkbox border-primary-content checked:border-primary-content [--chkbg:theme(colors.primary.content)] [--chkfg:white]" />
@@ -301,10 +410,14 @@
               <span class="label-text text-[1.3rem]">الرياض</span>
             </label>
           </div>
+          <button id="showMoreCity"
+          class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
+          عرض المزيد <i class="fa-solid fa-chevron-down"></i>
+        </button>
         </div>
         <div class="mt-[4rem]">
           <h1 class="text-[1.5rem]">العام</h1>
-          <div class="mt-[2.5rem] flex flex-wrap">
+          <div id="years" class="mt-[2.5rem] flex flex-wrap">
             <label class="gap-2 cursor-pointer justify-start label w-[25%]">
               <input type="checkbox" checked
                 class="checkbox border-primary-content checked:border-primary-content [--chkbg:theme(colors.primary.content)] [--chkfg:white]" />
@@ -366,14 +479,18 @@
               <span class="label-text text-[1.3rem]">2012</span>
             </label>
           </div>
+          <button id="showMoreYears"
+          class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
+          عرض المزيد <i class="fa-solid fa-chevron-down"></i>
+        </button>
         </div>
         <button class="mt-[3rem] w-full btn bg-primary-content text-[1.9rem] h-auto py-[1.5rem] rounded-lg">
           بحث
         </button>
       </div>
-      <div class="py-[3rem] w-full xxl:w-1/2">
+      <div class="py-[3rem] w-full xxl:w-1/2 ">
         <h1 class="text-[1.5rem]">احدث المننجات</h1>
-        <div class="flex w-full flex-col items-center gap-[3.5rem] mt-[4rem]">
+        <div id="products" class="flex w-full flex-col items-center gap-[3.5rem] mt-[4rem]">
           <div
             class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
             <div class="flex md:flex-row flex-col w-full md:w-[70%]">
@@ -415,330 +532,334 @@
             </div>
           </div>
           <div
-          class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-          <div class="flex md:flex-row flex-col w-full md:w-[70%]">
-            <div class="md:w-1/2 flex flex-col gap-[1rem]">
-              <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-              <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-                باب سياره تيوتا جديد لم يستخدم
-              </h3>
-              <div class="w-full flex flex-col gap-2">
-                <div class="w-full flex justify-between">
-                  <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                      class="fa-solid fa-user text-primary-content"></i>
-                    محمد احمد</span>
-                  <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                      class="fa-solid fa-comment-dots text-primary-content"></i>
-                    40</span>
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
                 </div>
-                <div class="w-full flex justify-between">
-                  <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                      class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-                  <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                      class="fa-solid fa-clock text-primary-content"></i>
-                    الان</span>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
+          </div>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="md:w-1/2 flex flex-col gap-[1rem]">
-              <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-              <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-              <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-              <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-                <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-                  src="./images/basket.png" alt="" />اضف الي العربه
-              </button>
-            </div>
-          </div>
-          <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-            <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-          </div>
-        </div>
-        <div
-        class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-        <div class="flex md:flex-row flex-col w-full md:w-[70%]">
-          <div class="md:w-1/2 flex flex-col gap-[1rem]">
-            <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-            <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-              باب سياره تيوتا جديد لم يستخدم
-            </h3>
-            <div class="w-full flex flex-col gap-2">
-              <div class="w-full flex justify-between">
-                <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                    class="fa-solid fa-user text-primary-content"></i>
-                  محمد احمد</span>
-                <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                    class="fa-solid fa-comment-dots text-primary-content"></i>
-                  40</span>
-              </div>
-              <div class="w-full flex justify-between">
-                <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                    class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-                <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                    class="fa-solid fa-clock text-primary-content"></i>
-                  الان</span>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
               </div>
             </div>
-          </div>
-          <div class="md:w-1/2 flex flex-col gap-[1rem]">
-            <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-            <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-            <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-            <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-              <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-                src="./images/basket.png" alt="" />اضف الي العربه
-            </button>
-          </div>
-        </div>
-        <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-          <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-        </div>
-      </div>
-      <div
-      class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-      <div class="flex md:flex-row flex-col w-full md:w-[70%]">
-        <div class="md:w-1/2 flex flex-col gap-[1rem]">
-          <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-          <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-            باب سياره تيوتا جديد لم يستخدم
-          </h3>
-          <div class="w-full flex flex-col gap-2">
-            <div class="w-full flex justify-between">
-              <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                  class="fa-solid fa-user text-primary-content"></i>
-                محمد احمد</span>
-              <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                  class="fa-solid fa-comment-dots text-primary-content"></i>
-                40</span>
-            </div>
-            <div class="w-full flex justify-between">
-              <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                  class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-              <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                  class="fa-solid fa-clock text-primary-content"></i>
-                الان</span>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
             </div>
           </div>
-        </div>
-        <div class="md:w-1/2 flex flex-col gap-[1rem]">
-          <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-          <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-          <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-          <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-            <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-              src="./images/basket.png" alt="" />اضف الي العربه
-          </button>
-        </div>
-      </div>
-      <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-        <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-      </div>
-    </div>
-    <div
-    class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-    <div class="flex md:flex-row flex-col w-full md:w-[70%]">
-      <div class="md:w-1/2 flex flex-col gap-[1rem]">
-        <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-        <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-          باب سياره تيوتا جديد لم يستخدم
-        </h3>
-        <div class="w-full flex flex-col gap-2">
-          <div class="w-full flex justify-between">
-            <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                class="fa-solid fa-user text-primary-content"></i>
-              محمد احمد</span>
-            <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                class="fa-solid fa-comment-dots text-primary-content"></i>
-              40</span>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
           </div>
-          <div class="w-full flex justify-between">
-            <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-            <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-                class="fa-solid fa-clock text-primary-content"></i>
-              الان</span>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
+          </div>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
+          </div>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
+          </div>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
+          </div>
+          <div
+            class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
+            <div class="flex md:flex-row flex-col w-full md:w-[70%]">
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
+                  باب سياره تيوتا جديد لم يستخدم
+                </h3>
+                <div class="w-full flex flex-col gap-2">
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-user text-primary-content"></i>
+                      محمد احمد</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-comment-dots text-primary-content"></i>
+                      40</span>
+                  </div>
+                  <div class="w-full flex justify-between">
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
+                    <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
+                        class="fa-solid fa-clock text-primary-content"></i>
+                      الان</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col gap-[1rem]">
+                <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
+                <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
+                <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+                  <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+                    src="./images/basket.png" alt="" />اضف الي العربه
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
+              <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="md:w-1/2 flex flex-col gap-[1rem]">
-        <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-        <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-        <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-        <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-          <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-            src="./images/basket.png" alt="" />اضف الي العربه
-        </button>
-      </div>
-    </div>
-    <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-      <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-    </div>
-  </div>
-  <div
-  class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-  <div class="flex md:flex-row flex-col w-full md:w-[70%]">
-    <div class="md:w-1/2 flex flex-col gap-[1rem]">
-      <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-      <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-        باب سياره تيوتا جديد لم يستخدم
-      </h3>
-      <div class="w-full flex flex-col gap-2">
-        <div class="w-full flex justify-between">
-          <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-              class="fa-solid fa-user text-primary-content"></i>
-            محمد احمد</span>
-          <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-              class="fa-solid fa-comment-dots text-primary-content"></i>
-            40</span>
-        </div>
-        <div class="w-full flex justify-between">
-          <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-              class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-          <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-              class="fa-solid fa-clock text-primary-content"></i>
-            الان</span>
-        </div>
-      </div>
-    </div>
-    <div class="md:w-1/2 flex flex-col gap-[1rem]">
-      <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-      <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-      <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-      <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-        <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-          src="./images/basket.png" alt="" />اضف الي العربه
+        <button id="showMoreProducts"
+        class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
+        عرض المزيد <i class="fa-solid fa-chevron-down"></i>
       </button>
-    </div>
-  </div>
-  <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-    <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-  </div>
-</div>
-<div
-class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-<div class="flex md:flex-row flex-col w-full md:w-[70%]">
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-      باب سياره تيوتا جديد لم يستخدم
-    </h3>
-    <div class="w-full flex flex-col gap-2">
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-user text-primary-content"></i>
-          محمد احمد</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-comment-dots text-primary-content"></i>
-          40</span>
-      </div>
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-clock text-primary-content"></i>
-          الان</span>
-      </div>
-    </div>
-  </div>
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-    <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-      <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-        src="./images/basket.png" alt="" />اضف الي العربه
-    </button>
-  </div>
-</div>
-<div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-  <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-</div>
-</div>
-<div
-class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-<div class="flex md:flex-row flex-col w-full md:w-[70%]">
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-      باب سياره تيوتا جديد لم يستخدم
-    </h3>
-    <div class="w-full flex flex-col gap-2">
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-user text-primary-content"></i>
-          محمد احمد</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-comment-dots text-primary-content"></i>
-          40</span>
-      </div>
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-clock text-primary-content"></i>
-          الان</span>
-      </div>
-    </div>
-  </div>
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-    <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-      <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-        src="./images/basket.png" alt="" />اضف الي العربه
-    </button>
-  </div>
-</div>
-<div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-  <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-</div>
-</div>
-<div
-class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
-<div class="flex md:flex-row flex-col w-full md:w-[70%]">
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">باب سياره بيع تشليح</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">
-      باب سياره تيوتا جديد لم يستخدم
-    </h3>
-    <div class="w-full flex flex-col gap-2">
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-user text-primary-content"></i>
-          محمد احمد</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-comment-dots text-primary-content"></i>
-          40</span>
-      </div>
-      <div class="w-full flex justify-between">
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-location-dot text-primary-content"></i>مكه</span>
-        <span class="text-[1rem] md:text-[1rem] w-[50%] text-[#757575]"><i
-            class="fa-solid fa-clock text-primary-content"></i>
-          الان</span>
-      </div>
-    </div>
-  </div>
-  <div class="md:w-1/2 flex flex-col gap-[1rem]">
-    <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
-    <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-    <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
-      <img class="w-[6.67px] h-[6.67px] sm:w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
-        src="./images/basket.png" alt="" />اضف الي العربه
-    </button>
-  </div>
-</div>
-<div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
-  <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
-</div>
-</div>
-        </div>
       </div>
   </section>
 
-  <section class="px-[2rem] md:px-[4rem] mt-[3rem]">
+  <section id="section2" class="section px-[2rem] md:px-[4rem] mt-[3rem]">
     <h1 class="text-[2rem]">تعرف علي منتجاتنا</h1>
     <div class="mt-[4rem] carousel flex gap-3 justify-between carousel-end rounded-box">
       <div class="flex justify-center items-center carousel-item bg-[#EEEEEE] rounded-full w-[280px] h-[272px]">
@@ -755,20 +876,10 @@ class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text
       </div>
     </div>
   </section>
-  <section
-    class="relative mx-[2rem] md:mx-[4rem] mt-[8rem] bg-primary-content h-[160px] md:h-[400px] lg:h-[600px] rounded-xl">
-    <div class="flex flex-col md:gap-[2rem] md:pt-[80px] pr-[5rem]">
-      <h1 class="text-[2rem] lg:text-[4rem] font-bold">الصيانه نوعين</h1>
-      <p class="text-[1rem] lg:text-[2rem]">تعرف علي منتجاتنا وخدماتنا المتميزه</p>
-    </div>
-    <img src="./images/Image10.png"
-      class="w-[140px] h-[123px] md:w-[346px] md:h-[268px] lg:w-[446px] lg:h-[368px] xl:w-[646px] xl:h-[568px] absolute left-0 xl:top-[2rem] top-[23%] md:top-[33%] lg:top-[39%]"
-      alt="" srcset="" />
-    <img src="./images/Image11.png"
-      class="w-[128px] h-[72px] md:w-[260px] md:h-[180px] lg:w-[380px] lg:h-[180px] xl:w-[480px] xl:h-[237px] absolute bottom-[-0.3rem]"
-      alt="" srcset="" />
+  <section id="section3" class="section mx-[2rem] md:mx-[4rem] mt-[8rem]  rounded-xl">
+    <img class="w-full" src="./images/maintenance1.png" alt="">
   </section>
-  <section class="flex w-full px-[2rem] md:px-[4rem] my-[9rem]">
+  <section id="section4" class="section flex w-full px-[2rem] md:px-[4rem] my-[9rem]">
     <div class="flex flex-col gap-[1rem] sm:gap-[2rem] w-full lg:w-1/2">
       <div class="flex lg:flex-col flex-row lg:justify-start justify-between lg:gap-[2rem]">
         <div class="flex flex-col gap-[2rem]">
@@ -814,9 +925,9 @@ class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text
             </div>
           </button>
           <div class="block lg:hidden w-1/2 relative">
-            <img src="./images/phone1.png" class="absolute w-[90px] h-[180px] left-[-84%] top-[-163px] z-[999]" alt=""
+            <img src="./images/phone1.png" class="absolute w-[90px] h-[180px] left-[-60%] top-[-163px] z-[999]" alt=""
               srcset="" />
-            <img src="./images/phone2.png" class="absolute w-[105px] h-[208px] top-[-190px] left-[-110%]" alt=""
+            <img src="./images/phone2.png" class="absolute w-[105px] h-[208px] top-[-190px] left-[-83%]" alt=""
               srcset="" />
           </div>
         </div>
@@ -884,6 +995,7 @@ class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text
       </div>
     </nav>
   </footer>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

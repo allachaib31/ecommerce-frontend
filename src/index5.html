@@ -15,31 +15,38 @@
 </head>
 
 <body dir="rtl" lang="ar" class="fontCairo">
-    <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end sm:gap-16 bg-primary text-white">
+    <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end  bg-primary text-white">
         <div class="hidden sm:flex gap-6">
             <img src="./images/messageIcon.png" class="w-[24px] h-[24px]" alt="" srcset="" />
             <img src="./images/notifucation.png" class="w-[24px] h-[24px]" alt="" />
         </div>
         <div class="flex gap-5">
             <details class="relative" dir="ltr" lang="ar">
-                <summary class="flex items-center gap-3 sm:w-[150px]">
+                <summary id="nameCurrency" class="flex items-center gap-3 sm:w-[150px]">
                     <i class="fa-solid fa-chevron-down"></i>SAR
                     <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
                 </summary>
                 <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
                     <li class="flex items-center gap-3 text-xl">
-                        <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+                        <button
+                            data-currency='SAR <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR<img class="w-[22px] h-[16px]"
+                                src="./images/saudi-arabia.png" alt="" /></button>
                     </li>
                     <li class="flex items-center gap-3 text-xl">
-                        <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+                        <button
+                            data-currency='SAR2 <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR2<img class="w-[22px] h-[16px]"
+                                src="./images/saudi-arabia.png" alt="" /></button>
                     </li>
                 </ul>
             </details>
             <div class="w-[2px] h-[30px] bg-white"></div>
             <details class="relative" dir="ltr" lang="ar">
-                <summary><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
-                <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
-                    <li><a>السعوديه</a></li>
+                <summary id="nameCountry"><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
+                <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[0.5rem]">
+                    <li><button data-name="السعوديه" class="chooseCountry">السعوديه</button></li>
+                    <li><button data-name="السعوديه 2" class="chooseCountry">السعوديه 2</button></li>
                 </ul>
             </details>
         </div>
@@ -51,9 +58,12 @@
                 <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
             </div>
             <div class="flex items-center gap-5">
-                <button class="hover:text-yellow-200">
-                    <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
-                </button>
+                <div class="indicator">
+                    <span class="indicator-item badge bg-primary-content left-full">9</span>
+                    <a class="hover:text-yellow-200">
+                        <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
+                    </a>
+                </div>
                 <button>
                     <i class="text-3xl fa-regular fa-heart hover:text-primary-content"></i>
                 </button>
@@ -76,7 +86,7 @@
                 </label>
             </div>
         </div>
-        <div class="hidden lg:block lg:w-[30%]">
+        <div class="hidden z-[999] relative lg:block lg:w-[30%]">
             <div class="join w-[100%]">
                 <div class="indicator">
                     <button class="btn btn-primary join-item">
@@ -85,9 +95,34 @@
                 </div>
                 <div class="w-[100%]">
                     <div class="">
-                        <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+                        <input id="search" class="w-[100%] text-xl input input-bordered join-item"
+                            placeholder="ابحث عن قطعه" />
                     </div>
                 </div>
+            </div>
+            <div id="showSearch" class="hidden absolute w-full shadow-lg bg-white ">
+                <ul class="flex flex-col">
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                </ul>
             </div>
         </div>
         <div class="hidden lg:flex gap-5">
@@ -118,7 +153,7 @@
                 </li>
             </ul>
         </div>
-        <div class="block lg:hidden">
+        <div class="block z-[999] relative lg:hidden">
             <div class="join w-[100%]">
                 <div class="indicator">
                     <button class="btn btn-primary join-item">
@@ -127,35 +162,60 @@
                 </div>
                 <div class="w-[100%]">
                     <div class="">
-                        <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+                        <input id="search2" class="w-[100%] text-xl input input-bordered join-item"
+                            placeholder="ابحث عن قطعه" />
                     </div>
                 </div>
+            </div>
+            <div id="showSearch2" class="hidden absolute w-full shadow-lg bg-white ">
+                <ul class="flex flex-col">
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                </ul>
             </div>
         </div>
     </section>
     <nav class="bg-primary text-white flex justify-center gap-3 mg:gap-10 lg:gap-36 p-[1rem]">
-        <ul class="flex gap-3 sm:gap-5 md:gap-10 lg:gap-16 items-center">
-            <li class="text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
+        <ul class="flex gap-2 sm:gap-5 md:gap-10 lg:gap-16 items-center">
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
                 تشاليح سيارات
             </li>
-            <li class="text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                تشاليح شاحنات
-            </li>
-            <li class="text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                سيارات مصدومه
-            </li>
-            <li class="text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                سيارات قديمه
-            </li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
         </ul>
         <button
-            class="btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
+            class="hidden sm:block btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
             + اضافه اعلان
         </button>
     </nav>
+    <div class="pt-[1rem] sm:hidden flex justify-center">
+        <button
+            class="btn h-auto bg-primary-content text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
+            + اضافه اعلان
+        </button>
+    </div>
     <section
         class="mt-[2rem] mx-[1rem] md:mx-[2rem] xxl:mx-[4rem] flex xl:flex-row flex-col-reverse gap-4 items-center">
-        <div class="w-full xl:w-[35%] flex flex-col gap-[3rem]">
+        <div class="w-full xl:w-[50%] flex flex-col gap-[3rem]">
             <div class="text-[24px] md:text-[48px]">باب سياره بيع تشليح</div>
             <hr />
             <div class="flex gap-2 items-center">
@@ -191,18 +251,20 @@
                     <li><span class="font-bold">سيارات تركب فيها</span>: محلي</li>
                 </ul>
             </div>
+            <h1 class="text-[24px] md:text-[48px] font-bold">السعر : 100 ريال</h1>
             <div class="flex flex-wrap justify-center md:justify-start items-center gap-5">
                 <div class="join">
                     <div class="indicator">
-                        <button class="btn bg-transparent join-item">+</button>
+                        <button class="addQuantiteOfProduct btn bg-transparent join-item">+</button>
                     </div>
                     <div>
                         <div>
-                            <input class="input input-bordered join-item w-[53px]" placeholder="01" />
+                            <input class="quantiteOfProduct input input-bordered join-item w-[53px]" value="1"
+                                placeholder="01" />
                         </div>
                     </div>
                     <div class="indicator">
-                        <button class="btn bg-transparent join-item">-</button>
+                        <button class="minusQuantiteOfProduct btn bg-transparent join-item">-</button>
                     </div>
                 </div>
                 <button class="px-[3rem] btn bg-primary-content">
@@ -213,47 +275,43 @@
                 </button>
             </div>
         </div>
-        <div class="w-full xl:w-[65%] md:p-[1rem]">
+        <div class="w-full md:w-[750px] xl:w-[800px] md:p-[1rem]">
             <div class="relative p-[1rem] border rounded-lg shadow-lg">
                 <div class="carousel w-[100%]">
                     <div id="item1" class="carousel-item w-full">
-                        <img src="./images/scrollImage1.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                     <div id="item2" class="carousel-item w-full">
-                        <img src="./images/scrollImage2.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                     <div id="item3" class="carousel-item w-full">
-                        <img src="./images/scrollImage3.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                     <div id="item4" class="carousel-item w-full">
-                        <img src="./images/scrollImage4.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                     <div id="item5" class="carousel-item w-full">
-                        <img src="./images/scrollImage5.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                     <div id="item6" class="carousel-item w-full">
-                        <img src="./images/scrollImage6.png" class="w-full h-[464px]" />
+                        <img src="./images/scrollImage1.png" class="w-full md:h-[464px]" />
                     </div>
                 </div>
-
-                <div
-                    class="z-10 absolute flex w-[90%] mx-auto justify-between transform -translate-y-1/2 md:left-[5%] md:right-[5%] top-[90%]">
-                    <a href="#slide4" class="btn bg-primary-content btn-circle">❮</a>
-                    <a href="#slide2" class="btn bg-primary-content btn-circle">❯</a>
-                </div>
-                <div class="carousel carousel-end w-[70%] flex justify-center mx-auto py-2 gap-2">
-                    <a href="#item1" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
-                    <a href="#item2" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage2.png" class="w-[60px] h-[60px]" /></a>
-                    <a href="#item3" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage3.png" class="w-[60px] h-[60px]" /></a>
-                    <a href="#item4" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage4.png" class="w-[60px] h-[60px]" /></a>
-                    <a href="#item5" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage5.png" class="w-[60px] h-[60px]" /></a>
-                    <a href="#item6" class="carousel-item z-20 btn h-auto bg-transparent border"><img
-                            src="./images/scrollImage6.png" class="w-[60px] h-[60px]" /></a>
+                <div class="carousel carousel-end flex justify-center mx-auto py-2 gap-2">
+                    <div class="flex gap-[0.5rem]">
+                        <a href="#item1" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                        <a href="#item2" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                        <a href="#item3" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                        <a href="#item4" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                        <a href="#item5" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                        <a href="#item6" class="carousel-item z-20 btn h-auto bg-transparent border"><img
+                                src="./images/scrollImage1.png" class="w-[60px] h-[60px]" /></a>
+                    </div>
                 </div>
             </div>
             <div class="p-[1rem] flex flex-wrap gap-[1rem] md:gap-0 items-center justify-between">
@@ -264,13 +322,13 @@
                     <button class="md:text-[20px]">
                         <i class="fa-brands text-primary-content fa-facebook"></i>
                     </button>
-                    <button class="text-[14px] md:text-[20px] flex gap-2 items-center">
+                    <button id="copyPageUrl" class="text-[14px] md:text-[20px] flex gap-2 items-center">
                         <i class="fa-regular text-primary-content fa-copy"></i>شارك المنتج
                     </button>
                 </div>
                 <div class="flex gap-[1rem] md:gap-5">
                     <button class="text-[14px] md:text-[20px]">
-                        اضف الي المفضله <i class="fa-regular fa-heart"></i>
+                        اضف الي المفضله <i class="heart fa-regular fa-heart"></i>
                     </button>
                     <button class="text-[14px] md:text-[20px]">
                         اضف الي المقارنه <i class="fa-solid fa-rotate"></i>
@@ -394,7 +452,8 @@
             </div>
         </div>
         <div class="flex flex-wrap justify-center gap-[1rem]">
-            <div class="card w-full md:w-[40%] lg:w-[23%] bg-base-100 shadow-xl">
+            <div class="relative card w-full  sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] bg-base-100 shadow-xl">
+                <i class="heart absolute text-[1.3rem] p-[1rem] fa-solid fa-heart text-primary-content"></i>
                 <figure class="px-10 pt-10">
                     <img src="./images/product1.1.png" alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -408,7 +467,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full md:w-[40%] lg:w-[23%] bg-base-100 shadow-xl">
+            <div class="relative card w-full  sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] bg-base-100 shadow-xl">
+                <i class="heart absolute text-[1.3rem] p-[1rem] fa-solid fa-heart text-primary-content"></i>
                 <figure class="px-10 pt-10">
                     <img src="./images/product1.1.png" alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -422,7 +482,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full md:w-[40%] lg:w-[23%] bg-base-100 shadow-xl">
+            <div class="relative card w-full  sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] bg-base-100 shadow-xl">
+                <i class="heart absolute text-[1.3rem] p-[1rem] fa-solid fa-heart text-primary-content"></i>
                 <figure class="px-10 pt-10">
                     <img src="./images/product1.1.png" alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -436,7 +497,23 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full md:w-[40%] lg:w-[23%] bg-base-100 shadow-xl">
+            <div class="relative card w-full  sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] bg-base-100 shadow-xl">
+                <i class="heart absolute text-[1.3rem] p-[1rem] fa-solid fa-heart text-primary-content"></i>
+                <figure class="px-10 pt-10">
+                    <img src="./images/product1.1.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body gap-[1rem]">
+                    <h2 class="card-title text-[20px]">مكينه سياره جديده</h2>
+                    <p class="text-[14px]">جديده اصليه لم تستعمل من قبل بحاله ممتازه</p>
+                    <p class="font-bold">123 ريال</p>
+                    <div class="card-actions">
+                        <button class="btn bg-primary-content"><img class="" src="./images/basket.png" alt="" /> اضف الي
+                            العربه</button>
+                    </div>
+                </div>
+            </div>
+            <div class="relative card w-full  sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] bg-base-100 shadow-xl">
+                <i class="heart absolute text-[1.3rem] p-[1rem] fa-solid fa-heart text-primary-content"></i>
                 <figure class="px-10 pt-10">
                     <img src="./images/product1.1.png" alt="Shoes" class="rounded-xl" />
                 </figure>

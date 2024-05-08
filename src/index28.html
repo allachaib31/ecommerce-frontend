@@ -15,31 +15,38 @@
 </head>
 
 <body dir="rtl" lang="ar" class="fontCairo">
-    <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end sm:gap-16 bg-primary text-white">
+    <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end  bg-primary text-white">
         <div class="hidden sm:flex gap-6">
             <img src="./images/messageIcon.png" class="w-[24px] h-[24px]" alt="" srcset="" />
             <img src="./images/notifucation.png" class="w-[24px] h-[24px]" alt="" />
         </div>
         <div class="flex gap-5">
             <details class="relative" dir="ltr" lang="ar">
-                <summary class="flex items-center gap-3 sm:w-[150px]">
+                <summary id="nameCurrency" class="flex items-center gap-3 sm:w-[150px]">
                     <i class="fa-solid fa-chevron-down"></i>SAR
                     <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
                 </summary>
                 <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
                     <li class="flex items-center gap-3 text-xl">
-                        <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+                        <button
+                            data-currency='SAR <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR<img class="w-[22px] h-[16px]"
+                                src="./images/saudi-arabia.png" alt="" /></button>
                     </li>
                     <li class="flex items-center gap-3 text-xl">
-                        <a>SAR</a><img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+                        <button
+                            data-currency='SAR2 <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR2<img class="w-[22px] h-[16px]"
+                                src="./images/saudi-arabia.png" alt="" /></button>
                     </li>
                 </ul>
             </details>
             <div class="w-[2px] h-[30px] bg-white"></div>
             <details class="relative" dir="ltr" lang="ar">
-                <summary><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
-                <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
-                    <li><a>السعوديه</a></li>
+                <summary id="nameCountry"><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
+                <ul class="absolute flex flex-col gap-2 bg-primary w-[100px] p-[0.5rem]">
+                    <li><button data-name="السعوديه" class="chooseCountry">السعوديه</button></li>
+                    <li><button data-name="السعوديه 2" class="chooseCountry">السعوديه 2</button></li>
                 </ul>
             </details>
         </div>
@@ -51,9 +58,12 @@
                 <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
             </div>
             <div class="flex items-center gap-5">
-                <button class="hover:text-yellow-200">
-                    <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
-                </button>
+                <div class="indicator">
+                    <span class="indicator-item badge bg-primary-content left-full">9</span>
+                    <a class="hover:text-yellow-200">
+                        <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
+                    </a>
+                </div>
                 <button>
                     <i class="text-3xl fa-regular fa-heart hover:text-primary-content"></i>
                 </button>
@@ -76,7 +86,7 @@
                 </label>
             </div>
         </div>
-        <div class="hidden relative lg:block lg:w-[30%]">
+        <div class="hidden z-[999] relative lg:block lg:w-[30%]">
             <div class="join w-[100%]">
                 <div class="indicator">
                     <button class="btn btn-primary join-item">
@@ -85,28 +95,33 @@
                 </div>
                 <div class="w-[100%]">
                     <div class="">
-                        <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+                        <input id="search" class="w-[100%] text-xl input input-bordered join-item"
+                            placeholder="ابحث عن قطعه" />
                     </div>
                 </div>
             </div>
-            <div class="absolute w-full shadow-lg bg-white p-[1rem]">
-                <ul class="flex flex-col gap-[1rem]">
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
+            <div id="showSearch" class="hidden absolute w-full shadow-lg bg-white ">
+                <ul class="flex flex-col">
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
                 </ul>
             </div>
         </div>
@@ -138,7 +153,7 @@
                 </li>
             </ul>
         </div>
-        <div class="block relative lg:hidden">
+        <div class="block z-[999] relative lg:hidden">
             <div class="join w-[100%]">
                 <div class="indicator">
                     <button class="btn btn-primary join-item">
@@ -147,46 +162,45 @@
                 </div>
                 <div class="w-[100%]">
                     <div class="">
-                        <input class="w-[100%] text-xl input input-bordered join-item" placeholder="ابحث عن قطعه" />
+                        <input id="search2" class="w-[100%] text-xl input input-bordered join-item"
+                            placeholder="ابحث عن قطعه" />
                     </div>
                 </div>
             </div>
-            <div class="absolute w-full shadow-lg bg-white p-[1rem]">
-                <ul class="flex flex-col gap-[1rem]">
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
-                    <li class="flex gap-[1rem] items-center">
-                        <i class="fa-solid fa-rotate-right text-[#000000ab]"></i> باب
-                        سياره بيع تشليح
-                    </li>
+            <div id="showSearch2" class="hidden absolute w-full shadow-lg bg-white ">
+                <ul class="flex flex-col">
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
+                    <li class=""><button
+                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                alt=""></button></li>
                 </ul>
             </div>
         </div>
     </section>
     <nav class="bg-primary text-white flex justify-center gap-3 mg:gap-10 lg:gap-36 p-[1rem]">
-        <ul class="flex gap-3 sm:gap-5 md:gap-10 lg:gap-16 items-center">
-            <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
+        <ul class="flex gap-2 sm:gap-5 md:gap-10 lg:gap-16 items-center">
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
                 تشاليح سيارات
             </li>
-            <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                تشاليح شاحنات
-            </li>
-            <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                سيارات مصدومه
-            </li>
-            <li class="text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">
-                سيارات قديمه
-            </li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
+            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
         </ul>
         <button
             class="hidden sm:block btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
@@ -206,9 +220,14 @@
                 <div class="text-center">
                     <div class="indicator">
                         <div class="w-[8rem] rounded-full">
-                            <img class="rounded-full" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img id="imgProfile" class="rounded-full w-[132px] h-[132px]" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
-                        <button class="px-[1rem] py-[1.3rem] rounded-lg text-[18px] indicator-item top-[92%] left-full bg-primary-content badge"><i class="fa-solid fa-pen"></i></button>
+                        <div class="rounded-lg text-[18px] indicator-item top-[92%] left-full bg-primary-content  badge  border-none cursor-pointer p-[1.3rem]">
+                            <div class="inline-block ">
+                                <label for="profileImage"><i class="fa-solid fa-pen"></i></label>
+                                <input id="profileImage" multiple class="hidden" type="file">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex md:flex-row flex-col gap-[1rem]">
