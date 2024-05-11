@@ -2599,6 +2599,14 @@ html {
   border-top-width: 4px;
 }
 
+.btn-xs {
+  height: 1.5rem;
+  min-height: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
 .btn-sm {
   height: 2rem;
   min-height: 2rem;
@@ -2607,9 +2615,29 @@ html {
   font-size: 0.875rem;
 }
 
+.btn-md {
+  height: 3rem;
+  min-height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-square:where(.btn-xs) {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0px;
+}
+
 .btn-square:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
+  padding: 0px;
+}
+
+.btn-square:where(.btn-md) {
+  height: 3rem;
+  width: 3rem;
   padding: 0px;
 }
 
@@ -2922,6 +2950,18 @@ html {
   top: 92%;
 }
 
+.left-5 {
+  left: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -3053,10 +3093,6 @@ html {
   height: 1rem;
 }
 
-.h-\[100px\] {
-  height: 100px;
-}
-
 .h-\[126px\] {
   height: 126px;
 }
@@ -3073,16 +3109,20 @@ html {
   height: 144px;
 }
 
+.h-\[146px\] {
+  height: 146px;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
 
-.h-\[155px\] {
-  height: 155px;
-}
-
 .h-\[157px\] {
   height: 157px;
+}
+
+.h-\[164px\] {
+  height: 164px;
 }
 
 .h-\[16px\] {
@@ -3093,16 +3133,12 @@ html {
   height: 180px;
 }
 
-.h-\[181px\] {
-  height: 181px;
+.h-\[185px\] {
+  height: 185px;
 }
 
 .h-\[1rem\] {
   height: 1rem;
-}
-
-.h-\[201px\] {
-  height: 201px;
 }
 
 .h-\[208px\] {
@@ -3121,12 +3157,12 @@ html {
   height: 24px;
 }
 
-.h-\[261px\] {
-  height: 261px;
+.h-\[250px\] {
+  height: 250px;
 }
 
-.h-\[272px\] {
-  height: 272px;
+.h-\[261px\] {
+  height: 261px;
 }
 
 .h-\[2rem\] {
@@ -3161,6 +3197,10 @@ html {
   height: 61px;
 }
 
+.h-\[75px\] {
+  height: 75px;
+}
+
 .h-\[90px\] {
   height: 90px;
 }
@@ -3169,32 +3209,8 @@ html {
   height: auto;
 }
 
-.h-\[75px\] {
-  height: 75px;
-}
-
-.h-\[2402px\] {
-  height: 2402px;
-}
-
-.h-\[240px\] {
-  height: 240px;
-}
-
-.h-\[146px\] {
-  height: 146px;
-}
-
-.h-\[164px\] {
-  height: 164px;
-}
-
-.h-\[185px\] {
-  height: 185px;
-}
-
-.h-\[250px\] {
-  height: 250px;
+.h-\[438vh\] {
+  height: 438vh;
 }
 
 .min-h-screen {
@@ -3245,28 +3261,32 @@ html {
   width: 156px;
 }
 
+.w-\[171px\] {
+  width: 171px;
+}
+
 .w-\[176px\] {
   width: 176px;
 }
 
-.w-\[188px\] {
-  width: 188px;
+.w-\[177px\] {
+  width: 177px;
 }
 
 .w-\[1rem\] {
   width: 1rem;
 }
 
-.w-\[221px\] {
-  width: 221px;
+.w-\[200px\] {
+  width: 200px;
 }
 
 .w-\[22px\] {
   width: 22px;
 }
 
-.w-\[241px\] {
-  width: 241px;
+.w-\[240px\] {
+  width: 240px;
 }
 
 .w-\[24px\] {
@@ -3281,16 +3301,8 @@ html {
   width: 250px;
 }
 
-.w-\[258px\] {
-  width: 258px;
-}
-
 .w-\[25px\] {
   width: 25px;
-}
-
-.w-\[280px\] {
-  width: 280px;
 }
 
 .w-\[2px\] {
@@ -3357,6 +3369,10 @@ html {
   width: 70px;
 }
 
+.w-\[75px\] {
+  width: 75px;
+}
+
 .w-\[800px\] {
   width: 800px;
 }
@@ -3385,26 +3401,6 @@ html {
   width: 100%;
 }
 
-.w-\[75px\] {
-  width: 75px;
-}
-
-.w-\[240px\] {
-  width: 240px;
-}
-
-.w-\[171px\] {
-  width: 171px;
-}
-
-.w-\[177px\] {
-  width: 177px;
-}
-
-.w-\[200px\] {
-  width: 200px;
-}
-
 .min-w-\[323px\] {
   min-width: 323px;
 }
@@ -3421,6 +3417,11 @@ html {
   flex-grow: 1;
 }
 
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-90 {
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3428,6 +3429,10 @@ html {
 
 .rotate-\[180deg\] {
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -4353,6 +4358,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-\[300px\] {
+    width: 300px;
   }
 
   .sm\:max-w-xs {

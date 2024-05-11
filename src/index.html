@@ -298,7 +298,7 @@
           <div class="section mt-[5rem]">
             <h1 class="text-[1.3rem] md:text-[26px]">حدد نوع القطعه</h1>
             <div class="flex flex-col sm:flex-row  gap-2 sm:gap-7 mt-[3rem]">
-              <details class="w-full sm:w-1/2">
+              <details id="firstList" class="w-full sm:w-1/2">
                 <summary class="btn w-full bg-transparent sm:text-[1.3rem]">
                   <img src="./images/engine1.png" alt="" srcset=""> المكينه<i class="fa-solid fa-chevron-down"></i>
                 </summary>
@@ -345,7 +345,7 @@
                   </button>
                 </ul>
               </details>
-              <details class="w-full sm:w-1/2">
+              <details id="secondList" class="w-full sm:w-1/2">
                 <summary class="btn w-full bg-transparent sm:text-[1.3rem]">
                   <img src="./images/engine2.png" alt=""> مكينه السياره<i class="fa-solid fa-chevron-down"></i>
                 </summary>
@@ -1053,10 +1053,6 @@
               </div>
             </div>
           </div>
-          <button id="showMoreProducts"
-            class="btn w-full bg-transparent mt-[3rem] text-2xl font-bold h-auto py-[2rem] shadow-xl">
-            عرض المزيد <i class="fa-solid fa-chevron-down"></i>
-          </button>
         </div>
     </section>
 
@@ -1086,12 +1082,22 @@
       </div>
     </section>
     <section id="section3" class="lg:h-[500px] section mx-[2rem] md:mx-[4rem] mt-[8rem]  rounded-xl">
-      <div class="mt-[4rem] carousel flex gap-3 justify-between carousel-end rounded-box">
-        <div class="carousel-item w-full">
-          <img class="w-full lg:h-[500px]" src="./images/maintenance1.png" alt="">
-        </div>
-        <div class="carousel-item w-full">
-          <img class="w-full lg:h-[500px]" src="./images/maintenance1.png" alt="">
+      <div class="flex justify-center w-full py-2 gap-2">
+        <div class="carousel w-full">
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="./images/maintenance1.png" class="lg:h-[500px] w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide4" class="btn btn-circle">❮</a> 
+              <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+          </div> 
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="./images/maintenance1.png" class="lg:h-[500px] w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" class="btn btn-circle">❮</a> 
+              <a href="#slide3" class="btn btn-circle">❯</a>
+            </div>
+          </div> 
         </div>
       </div>
     </section>

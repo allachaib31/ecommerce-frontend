@@ -143,6 +143,8 @@ window.onload = () => {
   }
   const typeMachineBtn = document.querySelectorAll(".typeMachineBtn");
   const typeMachineBtn2 = document.querySelectorAll(".typeMachineBtn2");
+  const firstList = document.getElementById("firstList");
+  const secondList = document.getElementById("secondList");
   try {
     let lastBtnActive;
     let lastBtnActive2;
@@ -151,11 +153,13 @@ window.onload = () => {
         if(lastBtnActive == undefined){
           btn.classList.add("bg-active")
           lastBtnActive = index;
+          firstList.removeAttribute("open");
           return;
         }
         btn.classList.add("bg-active")
         typeMachineBtn[lastBtnActive].classList.remove("bg-active");
         lastBtnActive = index;
+        firstList.removeAttribute("open");
       })
     })
     typeMachineBtn2.forEach((btn,index) => {
@@ -163,11 +167,13 @@ window.onload = () => {
         if(lastBtnActive2 == undefined){
           btn.classList.add("bg-active")
           lastBtnActive2 = index;
+          secondList.removeAttribute("open");
           return;
         }
         btn.classList.add("bg-active")
         typeMachineBtn2[lastBtnActive2].classList.remove("bg-active");
         lastBtnActive2 = index;
+        secondList.removeAttribute("open");
       })
     })
   } catch (error) {
