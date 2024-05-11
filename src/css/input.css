@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#contentSection{
+}
+
 body, html {
   overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
@@ -94,10 +98,20 @@ details[open] > summary::marker {
 
   .section {
     opacity: 0;
-    transform: translateX(-50%);
+    transform: translateY(100px);
   }
   .animated {
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
-    transform: translateX(0);
+    transform: translateY(0px);
+  }
+
+  .opacityAnimation {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  .opacityanimated {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(0px);
   }

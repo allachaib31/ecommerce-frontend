@@ -15,377 +15,391 @@
 </head>
 
 <body dir="rtl" lang="ar" class="fontCairo">
-    <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end  bg-primary text-white">
-        <div class="hidden sm:flex gap-6">
-            <img src="./images/messageIcon.png" class="w-[24px] h-[24px]" alt="" srcset="" />
-            <img src="./images/notifucation.png" class="w-[24px] h-[24px]" alt="" />
+    <div id="loading" class="min-h-screen flex justify-center items-center">
+        <div class="gap-[1.5rem] flex items-end">
+          <div class="flex items-end">
+            <a href="" class="cursor-pointer text-[5rem] font-bold">تشاليح</a>
+            <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
+          </div>
+          <div class="flex items-end rotate-[180deg]">
+            <span class="loading bg-primary-content w-[6rem] loading-dots "></span>
+          </div>
+          
         </div>
-        <div class="flex gap-5">
-            <details class="relative" dir="ltr" lang="ar">
-                <summary id="nameCurrency" class="flex items-center gap-3 sm:w-[150px]">
-                    <i class="fa-solid fa-chevron-down"></i>SAR
-                    <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
-                </summary>
-                <ul class="z-[999] absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
-                    <li class="flex items-center gap-3 text-xl">
-                        <button
-                            data-currency='SAR <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
-                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR<img class="w-[22px] h-[16px]"
-                                src="./images/saudi-arabia.png" alt="" /></button>
-                    </li>
-                    <li class="flex items-center gap-3 text-xl">
-                        <button
-                            data-currency='SAR2 <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
-                            class="chooseCuurrency flex gap-[0.5rem] items-center">SAR2<img class="w-[22px] h-[16px]"
-                                src="./images/saudi-arabia.png" alt="" /></button>
-                    </li>
-                </ul>
-            </details>
-            <div class="w-[2px] h-[30px] bg-white"></div>
-            <details class="relative" dir="ltr" lang="ar">
-                <summary id="nameCountry"><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
-                <ul class="z-[999] absolute flex flex-col gap-2 bg-primary w-[100px] p-[0.5rem]">
-                    <li><button data-name="السعوديه" class="chooseCountry">السعوديه</button></li>
-                    <li><button data-name="السعوديه 2" class="chooseCountry">السعوديه 2</button></li>
-                </ul>
-            </details>
-        </div>
-    </header>
-    <section class="py-[2rem] flex flex-col lg:flex-row justify-center gap-10 items-center">
-        <div class="flex w-full lg:w-auto justify-around lg:justify-start gap-10 items-center">
-            <div class="flex items-end">
-                <h1 class="text-[3rem] font-bold">تشاليح</h1>
-                <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
+      </div>
+      <section id="contentSection" class="hidden opacityAnimation">
+        <header class="w-full py-[1rem] sm:px-[2.5rem] flex justify-center sm:justify-end  bg-primary text-white">
+            <div class="hidden sm:flex gap-6">
+                <img src="./images/messageIcon.png" class="w-[24px] h-[24px]" alt="" srcset="" />
+                <img src="./images/notifucation.png" class="w-[24px] h-[24px]" alt="" />
             </div>
-            <div class="flex items-center gap-5">
-                <div class="indicator">
-                    <span class="indicator-item badge bg-primary-content left-full">9</span>
-                    <a class="hover:text-yellow-200">
-                        <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
-                    </a>
+            <div class="flex gap-5">
+                <details class="relative" dir="ltr" lang="ar">
+                    <summary id="nameCurrency" class="flex items-center gap-3 sm:w-[150px]">
+                        <i class="fa-solid fa-chevron-down"></i>SAR
+                        <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />
+                    </summary>
+                    <ul class="z-[999] absolute flex flex-col gap-2 bg-primary w-[100px] p-[1rem]">
+                        <li class="flex items-center gap-3 text-xl">
+                            <button
+                                data-currency='SAR <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                                class="chooseCuurrency flex gap-[0.5rem] items-center">SAR<img class="w-[22px] h-[16px]"
+                                    src="./images/saudi-arabia.png" alt="" /></button>
+                        </li>
+                        <li class="flex items-center gap-3 text-xl">
+                            <button
+                                data-currency='SAR2 <img class="w-[22px] h-[16px]" src="./images/saudi-arabia.png" alt="" />'
+                                class="chooseCuurrency flex gap-[0.5rem] items-center">SAR2<img class="w-[22px] h-[16px]"
+                                    src="./images/saudi-arabia.png" alt="" /></button>
+                        </li>
+                    </ul>
+                </details>
+                <div class="w-[2px] h-[30px] bg-white"></div>
+                <details class="relative" dir="ltr" lang="ar">
+                    <summary id="nameCountry"><i class="fa-solid fa-chevron-down"></i>السعوديه</summary>
+                    <ul class="z-[999] absolute flex flex-col gap-2 bg-primary w-[100px] p-[0.5rem]">
+                        <li><button data-name="السعوديه" class="chooseCountry">السعوديه</button></li>
+                        <li><button data-name="السعوديه 2" class="chooseCountry">السعوديه 2</button></li>
+                    </ul>
+                </details>
+            </div>
+        </header>
+        <section class="py-[2rem] flex flex-col lg:flex-row justify-center gap-10 items-center">
+            <div class="flex w-full lg:w-auto justify-around lg:justify-start gap-10 items-center">
+                <div class="flex items-end">
+                    <h1 class="text-[3rem] font-bold">تشاليح</h1>
+                    <span class="bg-primary-content w-[1rem] h-[1rem] block"></span>
                 </div>
-                <button>
-                    <i class="text-3xl fa-regular fa-heart hover:text-primary-content"></i>
+                <div class="flex items-center gap-5">
+                    <div class="indicator">
+                        <span id="numberOfProduct" class="indicator-item badge bg-primary-content left-full">0</span>
+                        <a class="hover:text-yellow-200">
+                            <img class="w-[32px] h-[32px]" src="./images/basket.png" alt="" />
+                        </a>
+                    </div>
+                    <button>
+                        <i class="text-3xl fa-regular fa-heart hover:text-primary-content"></i>
+                    </button>
+                    <label class="lg:hidden bg-transparent btn btn-circle swap swap-rotate">
+                        <!-- this hidden checkbox controls the state -->
+                        <input id="showNav" type="checkbox" />
+    
+                        <!-- hamburger icon -->
+                        <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 512 512">
+                            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                        </svg>
+    
+                        <!-- close icon -->
+                        <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 512 512">
+                            <polygon
+                                points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                        </svg>
+                    </label>
+                </div>
+            </div>
+            <div class="hidden z-[999] relative lg:block lg:w-[30%]">
+                <div class="join w-[100%]">
+                    <div class="indicator">
+                        <button class="btn btn-primary join-item">
+                            <i class="text-white text-xl fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="w-[100%]">
+                        <div class="">
+                            <input id="search" class="w-[100%] text-xl input input-bordered join-item"
+                                placeholder="ابحث عن قطعه" />
+                        </div>
+                    </div>
+                </div>
+                <div id="showSearch" class="z-[999] hidden absolute w-full shadow-lg bg-white ">
+                    <ul class="flex flex-col">
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-5">
+                <button class="border-none shadow-none btn bg-transparent text-[1.25rem] hover:bg-primary-content">
+                    مشترياتي <img src="./images/shopping.png" alt="" srcset="" />
                 </button>
-                <label class="lg:hidden bg-transparent btn btn-circle swap swap-rotate">
-                    <!-- this hidden checkbox controls the state -->
-                    <input id="showNav" type="checkbox" />
-
-                    <!-- hamburger icon -->
-                    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                        viewBox="0 0 512 512">
-                        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                    </svg>
-
-                    <!-- close icon -->
-                    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                        viewBox="0 0 512 512">
-                        <polygon
-                            points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-                    </svg>
-                </label>
+                <button class="btn border-none shadow-none bg-transparent text-[1.25rem] hover:bg-primary-content">
+                    <img src="./images/profile.png" alt="" srcset="" />
+                </button>
             </div>
-        </div>
-        <div class="hidden z-[999] relative lg:block lg:w-[30%]">
-            <div class="join w-[100%]">
-                <div class="indicator">
-                    <button class="btn btn-primary join-item">
-                        <i class="text-white text-xl fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-                <div class="w-[100%]">
-                    <div class="">
-                        <input id="search" class="w-[100%] text-xl input input-bordered join-item"
-                            placeholder="ابحث عن قطعه" />
-                    </div>
-                </div>
-            </div>
-            <div id="showSearch" class="z-[999] hidden absolute w-full shadow-lg bg-white ">
-                <ul class="flex flex-col">
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
+            <div id="nav" class="border shadow-lg w-[90%] mx-[2rem] hidden lg:hidden">
+                <ul class="flex flex-col gap-2 p-[1rem]">
+                    <li class="cursor-pointer flex gap-2">
+                        <img class="w-[24px] h-[24px]" src="./images/profile.png" alt="" />
+                        حسابي
+                    </li>
+                    <li class="cursor-pointer flex gap-2">
+                        <img class="w-[24px] h-[24px]" src="./images/shopping.png" alt="" />
+                        مشترياتي
+                    </li>
+                    <li class="cursor-pointer flex gap-2">
+                        <img class="w-[24px] h-[24px]" src="./images/notifcationDark.png" alt="" />
+                        الاشعارات
+                    </li>
+                    <li class="cursor-pointer flex gap-2">
+                        <img class="w-[24px] h-[24px]" src="./images/messageDark.png" alt="" />
+                        الرسائل
+                    </li>
                 </ul>
             </div>
-        </div>
-        <div class="hidden lg:flex gap-5">
-            <button class="border-none shadow-none btn bg-transparent text-[1.25rem] hover:bg-primary-content">
-                مشترياتي <img src="./images/shopping.png" alt="" srcset="" />
-            </button>
-            <button class="btn border-none shadow-none bg-transparent text-[1.25rem] hover:bg-primary-content">
-                <img src="./images/profile.png" alt="" srcset="" />
-            </button>
-        </div>
-        <div id="nav" class="border shadow-lg w-[90%] mx-[2rem] hidden lg:hidden">
-            <ul class="flex flex-col gap-2 p-[1rem]">
-                <li class="cursor-pointer flex gap-2">
-                    <img class="w-[24px] h-[24px]" src="./images/profile.png" alt="" />
-                    حسابي
-                </li>
-                <li class="cursor-pointer flex gap-2">
-                    <img class="w-[24px] h-[24px]" src="./images/shopping.png" alt="" />
-                    مشترياتي
-                </li>
-                <li class="cursor-pointer flex gap-2">
-                    <img class="w-[24px] h-[24px]" src="./images/notifcationDark.png" alt="" />
-                    الاشعارات
-                </li>
-                <li class="cursor-pointer flex gap-2">
-                    <img class="w-[24px] h-[24px]" src="./images/messageDark.png" alt="" />
-                    الرسائل
-                </li>
-            </ul>
-        </div>
-        <div class="block z-[999] relative lg:hidden">
-            <div class="join w-[100%]">
-                <div class="indicator">
-                    <button class="btn btn-primary join-item">
-                        <i class="text-white text-xl fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-                <div class="w-[100%]">
-                    <div class="">
-                        <input id="search2" class="w-[100%] text-xl input input-bordered join-item"
-                            placeholder="ابحث عن قطعه" />
+            <div class="block z-[999] relative lg:hidden">
+                <div class="join w-[100%]">
+                    <div class="indicator">
+                        <button class="btn btn-primary join-item">
+                            <i class="text-white text-xl fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="w-[100%]">
+                        <div class="">
+                            <input id="search2" class="w-[100%] text-xl input input-bordered join-item"
+                                placeholder="ابحث عن قطعه" />
+                        </div>
                     </div>
                 </div>
+                <div id="showSearch2" class="z-[999] hidden absolute w-full shadow-lg bg-white ">
+                    <ul class="flex flex-col">
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                        <li class=""><button
+                                class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
+                                        class="fa-solid fa-rotate-right text-[#000000ab]"></i>
+                                    باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
+                                    alt=""></button></li>
+                    </ul>
+                </div>
             </div>
-            <div id="showSearch2" class="z-[999] hidden absolute w-full shadow-lg bg-white ">
-                <ul class="flex flex-col">
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
-                    <li class=""><button
-                            class="p-[1rem] hover:bg-[#4442422c] w-full flex gap-[1rem] justify-between items-center"><span><i
-                                    class="fa-solid fa-rotate-right text-[#000000ab]"></i>
-                                باب سياره بيع تشليح</span> <img src="./images/product1.1.png" class="w-[44px] h-[44px]"
-                                alt=""></button></li>
+        </section>
+        <nav class="bg-primary text-white flex justify-center gap-3 mg:gap-10 lg:gap-36 p-[1rem]">
+            <ul class="flex gap-2 sm:gap-5 md:gap-10 lg:gap-16 items-center">
+                <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
+                    تشاليح سيارات
+                </li>
+                <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
+                <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
+                <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
+            </ul>
+            <button
+                class="hidden sm:block btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
+                + اضافه اعلان
+            </button>
+        </nav>
+        <div class="pt-[1rem] sm:hidden flex justify-center">
+            <button
+                class="btn h-auto bg-primary-content text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
+                + اضافه اعلان
+            </button>
+        </div>
+        <section class="pt-[1rem] px-[2rem] md:px-[4rem] flex flex-col gap-[2.5rem]">
+            <div class="text-[18px] md:text-[24px] breadcrumbs">
+                <ul>
+                    <li><a>لوحه التحكم</a></li>
+                    <li>اضافه اعلان جديد</li>
                 </ul>
             </div>
-        </div>
-    </section>
-    <nav class="bg-primary text-white flex justify-center gap-3 mg:gap-10 lg:gap-36 p-[1rem]">
-        <ul class="flex gap-2 sm:gap-5 md:gap-10 lg:gap-16 items-center">
-            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] fontCairo cursor-pointer">
-                تشاليح سيارات
-            </li>
-            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">تشاليح شاحنات</li>
-            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات مصدومه</li>
-            <li class="text-[1rem] xl:text-[1.5rem] xxl:text-[1.87500rem] cursor-pointer">سيارات قديمه</li>
-        </ul>
-        <button
-            class="hidden sm:block btn h-auto bg-primary-content text-[10px] sm:text-[14px] xl:text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
-            + اضافه اعلان
-        </button>
-    </nav>
-    <div class="pt-[1rem] sm:hidden flex justify-center">
-        <button
-            class="btn h-auto bg-primary-content text-[1.5rem] xxl:text-[1.87500rem] py-[1rem] lg:px-[63px] hover:bg-white">
-            + اضافه اعلان
-        </button>
-    </div>
-    <section class="pt-[1rem] px-[2rem] md:px-[4rem] flex flex-col gap-[2.5rem]">
-        <div class="text-[18px] md:text-[24px] breadcrumbs">
-            <ul>
-                <li><a>لوحه التحكم</a></li>
-                <li>اضافه اعلان جديد</li>
-            </ul>
-        </div>
-        <form class="flex flex-col gap-[1.5rem] border shadow-lg rounded-[14px] p-[1rem]">
-            <h1 class="text-[34px] font-bold">موقع الاعلان</h1>
-            <p>قم بكتابه بيانات السياره</p>
-            <form action="" class="flex flex-col gap-[1rem]">
-                <label class="form-control gap-[0.8rem]">
-                    <div class="label">
-                        <span class="label-text text-[20px]">العنوان</span>
+            <form class="flex flex-col gap-[1.5rem] border shadow-lg rounded-[14px] p-[1rem]">
+                <h1 class="text-[34px] font-bold">موقع الاعلان</h1>
+                <p>قم بكتابه بيانات السياره</p>
+                <form action="" class="flex flex-col gap-[1rem]">
+                    <label class="form-control gap-[0.8rem]">
+                        <div class="label">
+                            <span class="label-text text-[20px]">العنوان</span>
+                        </div>
+                        <textarea class="textarea textarea-bordered h-24 resize-none" placeholder="اكتب نص |"></textarea>
+                    </label>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">الاسم</span>
+                            </div>
+                            <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">نوع المنتج</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
                     </div>
-                    <textarea class="textarea textarea-bordered h-24 resize-none" placeholder="اكتب نص |"></textarea>
-                </label>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">الاسم</span>
-                        </div>
-                        <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">نوع المنتج</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">سنه الصنع</span>
-                        </div>
-                        <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">رقم المنتج</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">اللون</span>
-                        </div>
-                        <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">الحاله</span>
-                        </div>
-                        <input type="text" placeholder="تالف او يمكن اصلاحها" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">السعر</span>
-                        </div>
-                        <input type="text" placeholder="تحديد السعر" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">الضمان</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">التركيب</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">موقع القطعه</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div class="flex md:flex-row flex-col gap-[1rem]">
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">الشحن</span>
-                        </div>
-                        <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
-                    </label>
-                    <label class="md:w-1/2 form-control gap-[0.8rem]">
-                        <div class="label">
-                            <span class="label-text text-[20px]">الاستماره</span>
-                        </div>
-                        <input type="text" placeholder="محدد او منتهيه" class="input input-bordered w-full" />
-                    </label>
-                </div>
-                <label class="form-control w-full gap-[0.8rem]">
-                    <div class="label">
-                        <span class="label-text text-[20px]">رقم التواصل</span>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">سنه الصنع</span>
+                            </div>
+                            <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">رقم المنتج</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
                     </div>
-                    <input type="text" placeholder="+9975489484894" class="input input-bordered w-full " />
-                </label>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">اللون</span>
+                            </div>
+                            <input type="text" placeholder="يحدد بالذكاء الاصطناعي" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">الحاله</span>
+                            </div>
+                            <input type="text" placeholder="تالف او يمكن اصلاحها" class="input input-bordered w-full" />
+                        </label>
+                    </div>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">السعر</span>
+                            </div>
+                            <input type="text" placeholder="تحديد السعر" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">الضمان</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
+                    </div>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">التركيب</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">موقع القطعه</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
+                    </div>
+                    <div class="flex md:flex-row flex-col gap-[1rem]">
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">الشحن</span>
+                            </div>
+                            <input type="text" placeholder="اكتب نص |" class="input input-bordered w-full" />
+                        </label>
+                        <label class="md:w-1/2 form-control gap-[0.8rem]">
+                            <div class="label">
+                                <span class="label-text text-[20px]">الاستماره</span>
+                            </div>
+                            <input type="text" placeholder="محدد او منتهيه" class="input input-bordered w-full" />
+                        </label>
+                    </div>
+                    <label class="form-control w-full gap-[0.8rem]">
+                        <div class="label">
+                            <span class="label-text text-[20px]">رقم التواصل</span>
+                        </div>
+                        <input type="text" placeholder="+9975489484894" class="input input-bordered w-full " />
+                    </label>
+                </form>
+                <div class="mt-[1rem] flex justify-end">
+                    <button class="flex items-center gap-[1rem]">التالي <i class="fa-solid fa-angle-left"></i></button>
+                </div>
             </form>
-            <div class="mt-[1rem] flex justify-end">
-                <button class="flex items-center gap-[1rem]">التالي <i class="fa-solid fa-angle-left"></i></button>
-            </div>
-        </form>
-    </section>
-    <footer class="footer mt-[17rem] p-10 bg-primary text-white">
-        <nav>
-            <h6 class="footer-title text-[24px] mb-[2rem]">روابط مهمة</h6>
-            <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
-            <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title text-[24px] mb-[2rem]">روابط مهمة</h6>
-            <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
-            <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title text-[24px] mb-[2rem]">الدفع والعموله</h6>
-            <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
-            <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title text-[24px] mb-[2rem]">الانظمه</h6>
-            <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
-            <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title text-[24px] mb-[2rem]">الاقسام</h6>
-            <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
-            <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
-        </nav>
-    </footer>
-    <footer class="footer px-10 py-4 border-t bg-primary text-white border-base-300">
-        <aside class="items-center grid-flow-col">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-                clip-rule="evenodd" class="fill-current">
-                <path
-                    d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
-                </path>
-            </svg>
-            <p>تشاليح <br />جميع الحقوق محفوظه 2023</p>
-        </aside>
-        <nav class="md:place-self-center md:justify-self-end">
-            <div class="grid grid-flow-col gap-4">
-                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="fill-current">
-                        <path
-                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
-                        </path>
-                    </svg></a>
-                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="fill-current">
-                        <path
-                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
-                        </path>
-                    </svg></a>
-                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        class="fill-current">
-                        <path
-                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
-                        </path>
-                    </svg></a>
-            </div>
-        </nav>
-    </footer>
+        </section>
+        <footer class="footer mt-[17rem] p-10 bg-primary text-white">
+            <nav>
+                <h6 class="footer-title text-[24px] mb-[2rem]">روابط مهمة</h6>
+                <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
+                <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-[24px] mb-[2rem]">روابط مهمة</h6>
+                <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
+                <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-[24px] mb-[2rem]">الدفع والعموله</h6>
+                <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
+                <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-[24px] mb-[2rem]">الانظمه</h6>
+                <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
+                <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title text-[24px] mb-[2rem]">الاقسام</h6>
+                <a class="link link-hover text-[20px]">فحص السياره برقم الهيكل</a>
+                <a class="link link-hover text-[20px]">معرفه نوع السياره</a>
+            </nav>
+        </footer>
+        <footer class="footer px-10 py-4 border-t bg-primary text-white border-base-300">
+            <aside class="items-center grid-flow-col">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                    clip-rule="evenodd" class="fill-current">
+                    <path
+                        d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+                    </path>
+                </svg>
+                <p>تشاليح <br />جميع الحقوق محفوظه 2023</p>
+            </aside>
+            <nav class="md:place-self-center md:justify-self-end">
+                <div class="grid grid-flow-col gap-4">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                            </path>
+                        </svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                            </path>
+                        </svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                            </path>
+                        </svg></a>
+                </div>
+            </nav>
+        </footer>
+      </section>
     <script type="module" src="./js/index.js"></script>
 </body>
 

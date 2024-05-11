@@ -1,11 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll('.section');
   
   function checkScroll() {
     sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < window.innerHeight * 0.8) {
+      if (sectionTop < window.innerHeight) {
         section.classList.add('animated');
       } else {
         section.classList.remove('animated');
@@ -16,7 +15,16 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', checkScroll);
 });
 
+
 window.onload = () => {
+  setTimeout(() => {
+    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("contentSection").classList.remove("hidden");
+    setTimeout(() => {
+      document.getElementById("contentSection").classList.remove("opacityAnimation")
+      document.getElementById("contentSection").classList.add("opacityanimated")
+    },500)
+  },2000)
   const range = document.querySelectorAll(".range-slider span input");
   let progress = document.querySelector(".range-slider .progress");
   let gap = 0.1;
@@ -39,36 +47,66 @@ window.onload = () => {
       }
     });
   });
-  
-
+  try {
+    function addToCarteFunction(){
+      const addToCarte = document.querySelectorAll(".addToCarte");
+      const numberOfProduct = document.getElementById("numberOfProduct");
+      addToCarte.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const attribute = btn.getAttribute("data-text");
+          if (attribute == "ازالة من العربة") {
+            my_modal_1.showModal();
+            numberOfProduct.innerText = Number(numberOfProduct.innerText) + 1;
+            btn.innerHTML = `<img class="w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+            src="./images/basket.png" alt="" />ازالة من العربة`;
+            btn.setAttribute("data-text", "اضف الي العربه");
+            return;
+          }
+          my_modal_2.showModal();
+          btn.setAttribute("data-text", "ازالة من العربة");
+          btn.innerHTML = `<img class="w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
+          src="./images/basket.png" alt="" />اضف الي العربه `;
+          numberOfProduct.innerText = Number(numberOfProduct.innerText) - 1;
+        });
+      });
+    }
+    addToCarteFunction();
+  } catch (error) {
+    console.log("the element is not existe");
+  }
   function selectAreaFunction() {
     const selectArea = document.querySelectorAll(".selectArea");
     const listSelected = document.getElementById("listAreaSelected");
     let listAreaSelected = [];
     try {
-      listSelected.innerHTML = ``
-      selectArea.forEach((area,index) => {
-        area.addEventListener("click",() => {
-          if(listAreaSelected.indexOf(area.getAttribute("title")) > -1 ){
-            listAreaSelected.splice(listAreaSelected.indexOf(area.getAttribute("title")),1);
-            renderListAreaSelected()
+      listSelected.innerHTML = ``;
+      selectArea.forEach((area, index) => {
+        area.addEventListener("click", () => {
+          if (listAreaSelected.indexOf(area.getAttribute("title")) > -1) {
+            listAreaSelected.splice(
+              listAreaSelected.indexOf(area.getAttribute("title")),
+              1
+            );
+            renderListAreaSelected();
             return;
           }
-          listAreaSelected.push(area.getAttribute("title"))
+          listAreaSelected.push(area.getAttribute("title"));
           renderListAreaSelected();
-        })
-      })
+        });
+      });
       function renderListAreaSelected() {
-        listSelected.innerHTML = ""
+        listSelected.innerHTML = "";
         for (let i = 0; i < listAreaSelected.length; i++) {
-          listSelected.innerHTML += `<li class="btn cursor-pointer">${listAreaSelected[i]} <button class="removeSelectedArea bg-red-500 hover:text-red-500 btn"><i class="fa-solid fa-trash"></i><button></li>`
+          listSelected.innerHTML += `<li class="btn cursor-pointer">${listAreaSelected[i]} <button class="removeSelectedArea bg-red-500 hover:text-red-500 btn"><i class="fa-solid fa-trash"></i><button></li>`;
         }
-        document.querySelectorAll(".removeSelectedArea").forEach((btn,index) => {
-          btn.addEventListener("click",() => {
-            listAreaSelected.splice(index,1);
-            renderListAreaSelected()
-          })
-        })
+        document
+          .querySelectorAll(".removeSelectedArea")
+          .forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+              listAreaSelected.splice(index, 1);
+              renderListAreaSelected();
+            });
+          });
       }
     } catch (error) {
       console.log("the element is not existe");
@@ -111,7 +149,22 @@ window.onload = () => {
   } catch (error) {
     console.log("the element is not existe");
   }
-
+  const typeOfFilter = document.querySelectorAll(".typeOfFilter");
+  try {
+    let lastElementActive = 2
+    typeOfFilter.forEach((btn,index) => {
+      btn.addEventListener("click",() => {
+        if(index == lastElementActive) return;
+        typeOfFilter[lastElementActive].classList.remove("bg-primary");
+        typeOfFilter[lastElementActive].classList.remove("text-white");
+        btn.classList.add("bg-primary");
+        btn.classList.add("text-white");
+        lastElementActive = index;
+      })
+    })
+  } catch (error) {
+    console.log("the element is not existe");
+  }
   const showNav = document.getElementById("showNav");
   try {
     showNav.addEventListener("click", () => {
@@ -245,9 +298,9 @@ window.onload = () => {
         <area alt="" class="selectArea" title="product22" coords="108,148,109,162,99,162" shape="poly">
         <area alt="" class="selectArea" title="product23" coords="36,148,46,156" shape="rect">
         <area alt="" class="selectArea" title="product24" coords="40,42,46,51" shape="rect">
-      </map>`
+      </map>`;
       $(function () {
-        $('.maparea').maphilight();
+        $(".maparea").maphilight();
       });
       selectAreaFunction();
       partsFunction(externalPartsCarBtn, "externalPartsCarBtn");
@@ -302,9 +355,9 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
         <area alt="" title="product38" class="selectArea" coords="96,40,118,53" shape="rect">
         <area alt="" title="product39" class="selectArea" coords="208,79,216,73,227,79,228,137,218,144,208,142"
           shape="poly">
-      </map>`
+      </map>`;
       $(function () {
-        $('.maparea').maphilight();
+        $(".maparea").maphilight();
       });
       selectAreaFunction();
       partsFunction(interiorPartsCarBtn, "interiorPartsCarBtn");
@@ -330,13 +383,12 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
           <area alt="" class="selectArea" title="product14"  coords="70,159,10" shape="circle">
           <area alt="" class="selectArea" title="product15"  coords="33,57,15" shape="circle">
           <area alt="" class="selectArea" title="product16"  coords="295,51,272,41" shape="rect">
-      </map>`
+      </map>`;
       $(function () {
-        $('.maparea').maphilight();
+        $(".maparea").maphilight();
       });
       selectAreaFunction();
       partsFunction(accessoriesCarBtn, "accessoriesCarBtn");
-
     });
     carHitBtn.addEventListener("click", () => {
       if (lastActivePartsCarBtn == "carHitBtn") return;
@@ -345,9 +397,9 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
       <map name="image-map">
       <area class="selectArea" alt="" title="product1" coords="27,26,53,23,110,33,158,42,194,49,212,63,218,94,202,120,194,126,150,124,83,115,31,110,11,96,9,58" shape="poly">
       <area class="selectArea" alt="" title="product2" coords="220,80,232,65,243,62,247,74,258,78,244,87,222,95,232,104,277,108,314,111,323,144,324,174,312,186,282,192,254,191,217,190,194,188,178,187,160,180,162,176,133,150,152,138,210,118" shape="poly">
-  </map>`
+  </map>`;
       $(function () {
-        $('.maparea').maphilight();
+        $(".maparea").maphilight();
       });
       selectAreaFunction();
       partsFunction(carHitBtn, "carHitBtn");
@@ -368,7 +420,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
     console.log("the element is not existe");
   }
   try {
-    function addEventToLogoCarButton(){
+    function addEventToLogoCarButton() {
       let logoCarButton = document.querySelectorAll(".logoCarButton");
       let lastButtonCarActive = "";
       logoCarButton.forEach((button) => {
@@ -383,7 +435,9 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
           button.classList.toggle("bg-transparent");
           button.classList.toggle("bg-primary-content");
           if (lastButtonCarActive != "") {
-            logoCarButton[lastButtonCarActive].classList.toggle("bg-transparent");
+            logoCarButton[lastButtonCarActive].classList.toggle(
+              "bg-transparent"
+            );
             logoCarButton[lastButtonCarActive].classList.toggle(
               "bg-primary-content"
             );
@@ -391,7 +445,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
           lastButtonCarActive = dataCar;
         });
       });
-    };
+    }
     addEventToLogoCarButton();
   } catch (error) {
     console.log("the element is not existe");
@@ -454,8 +508,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
   try {
     showMoreProducts.addEventListener("click", (event) => {
       const products = document.getElementById("products");
-      products.innerHTML += `
-      <div
+      products.innerHTML += `          <div
       class="flex w-full sm:w-1/2 md:w-full gap-5 flex-col-reverse justify-center text-center md:text-right  md:justify-start md:flex-row p-[24px] card border border-[#E4E7EE] bg-base-100 shadow-lg">
       <div class="flex md:flex-row flex-col w-full md:w-[70%]">
         <div class="md:w-1/2 flex flex-col gap-[1rem]">
@@ -485,7 +538,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
           <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
           <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
           <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-          <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+          <button data-text="ازالة من العربة" class="addToCarte text-[1rem] xxl:text-[1rem] btn bg-primary-content">
             <img class="w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
               src="./images/basket.png" alt="" />اضف الي العربه
           </button>
@@ -525,7 +578,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
         <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
         <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
         <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-        <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+        <button data-text="ازالة من العربة" class="addToCarte text-[1rem] xxl:text-[1rem] btn bg-primary-content">
           <img class="w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
             src="./images/basket.png" alt="" />اضف الي العربه
         </button>
@@ -565,7 +618,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
       <h1 class="text-[20px] md:text-[20px]">100 ريال</h1>
       <h3 class="text-[1rem] md:text-[14px] text-[#757575]">العدد المتبقي : 3</h3>
       <h3 class="text-[1rem] md:text-[14px] text-[#757575]">المشاهده الان : 30</h3>
-      <button class="text-[1rem] xxl:text-[1rem] btn bg-primary-content">
+      <button data-text="ازالة من العربة" class="addToCarte text-[1rem] xxl:text-[1rem] btn bg-primary-content">
         <img class="w-[25px] sm:h-[25px] xxl:w-[32px] xxl:h-[32px]"
           src="./images/basket.png" alt="" />اضف الي العربه
       </button>
@@ -574,8 +627,8 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
   <div class="w-full md:w-[30%] flex justify-center items-center border rounded-xl">
     <img src="./images/product1.png" class="sm:w-[110px] sm:h-[100px]" alt="" />
   </div>
-</div>
-      `
+</div>`;
+addToCarteFunction();
     });
   } catch (error) {
     console.log("the element is not existe");
@@ -640,11 +693,24 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
   const displaySection = document.querySelectorAll(".displaySection");
   try {
     let lastSectionDisplay = "section1";
-    displaySection.forEach((btn) => {
+    let lastButtonActive = "0";
+    displaySection.forEach((btn,index) => {
       btn.addEventListener("click", () => {
+        if(lastSectionDisplay == btn.getAttribute("data-section")) return;
         document.getElementById(lastSectionDisplay).classList.toggle("hidden");
         lastSectionDisplay = btn.getAttribute("data-section");
         document.getElementById(lastSectionDisplay).classList.toggle("hidden");
+        btn.classList.add("active");
+        btn.classList.add("border-t-0");
+        btn.classList.add("border-b-2")
+        btn.classList.add("text-black");
+        btn.classList.add("font-bold");
+        displaySection[lastButtonActive].classList.remove("active");
+        displaySection[lastButtonActive].classList.remove("border-t-0");
+        displaySection[lastButtonActive].classList.remove("border-b-2");
+        displaySection[lastButtonActive].classList.remove("text-black");
+        displaySection[lastButtonActive].classList.remove("font-bold");
+        lastButtonActive = index;
       });
     });
   } catch (error) {
@@ -652,7 +718,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
   }
   const sendMessage = document.getElementById("sendMessage");
   const fileUpload = document.getElementById("file-upload");
-  const recordButton = document.getElementById('recordButton');
+  const recordButton = document.getElementById("recordButton");
   try {
     sendMessage.addEventListener("click", () => {
       const message = document.getElementById("Message");
@@ -676,7 +742,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
   </div>
       `;
     });
-    fileUpload.addEventListener("change",(event) => {
+    fileUpload.addEventListener("change", (event) => {
       const files = event.target.files;
       const date = new Date();
       for (let i = 0; i < files.length; i++) {
@@ -688,7 +754,7 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
           image.src = e.target.result;
           image.style.width = "200px";
           image.style.height = "200px";
-          console.log(image)
+          console.log(image);
           messages.innerHTML += `
           <div class="chat chat-start">
           <div class="chat-image avatar">
@@ -707,35 +773,36 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
 
         reader.readAsDataURL(file);
       }
-    })
+    });
     let mediaRecorder;
     let chunks = [];
-    
+
     // Function to start recording
     function startRecording() {
       const date = new Date();
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(function(stream) {
-                // Create a MediaRecorder object
-                mediaRecorder = new MediaRecorder(stream);
-                chunks = [];
-    
-                // Start recording
-                mediaRecorder.start();
-    
-                // Event handler when data is available
-                mediaRecorder.ondataavailable = function(event) {
-                    chunks.push(event.data);
-                }
-    
-                // Event handler when recording stops
-                mediaRecorder.onstop = function() {
-                    // Create a blob from the recorded data
-                    let blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-    
-                    // Create a URL from the blob
-                    let audioURL = window.URL.createObjectURL(blob);
-                    messages.innerHTML += `
+      navigator.mediaDevices
+        .getUserMedia({ audio: true })
+        .then(function (stream) {
+          // Create a MediaRecorder object
+          mediaRecorder = new MediaRecorder(stream);
+          chunks = [];
+
+          // Start recording
+          mediaRecorder.start();
+
+          // Event handler when data is available
+          mediaRecorder.ondataavailable = function (event) {
+            chunks.push(event.data);
+          };
+
+          // Event handler when recording stops
+          mediaRecorder.onstop = function () {
+            // Create a blob from the recorded data
+            let blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+
+            // Create a URL from the blob
+            let audioURL = window.URL.createObjectURL(blob);
+            messages.innerHTML += `
                     <div class="chat chat-start">
                     <div class="chat-image avatar">
                         <div class="w-10 rounded-full">
@@ -749,71 +816,71 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
                     </div>
                 </div>
                     `;
-                }
-            })
-            .catch(function(err) {
-                console.error('Error accessing microphone:', err);
-            });
+          };
+        })
+        .catch(function (err) {
+          console.error("Error accessing microphone:", err);
+        });
     }
-    
+
     // Function to stop recording
     function stopRecording() {
-        if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-            // Stop recording
-            mediaRecorder.stop();
-        }
+      if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        // Stop recording
+        mediaRecorder.stop();
+      }
     }
-    
+
     // Event listener for the record button
-    recordButton.addEventListener('click', function() {
-        // If recording is already in progress, stop recording
-        if (mediaRecorder && mediaRecorder.state === 'recording') {
-            stopRecording();
-            recordButton.innerHTML = '<i class="fas fa-microphone"></i>';
-        } else {
-            // Otherwise, start recording
-            startRecording();
-            recordButton.innerHTML = '<i class="fa-solid fa-microphone-slash"></i>';
-        }
+    recordButton.addEventListener("click", function () {
+      // If recording is already in progress, stop recording
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        stopRecording();
+        recordButton.innerHTML = '<i class="fas fa-microphone"></i>';
+      } else {
+        // Otherwise, start recording
+        startRecording();
+        recordButton.innerHTML = '<i class="fa-solid fa-microphone-slash"></i>';
+      }
     });
   } catch (error) {
     console.log("the element is not existe");
   }
 
   // Get pagination elements
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const ellipsis = document.getElementById('ellipsis');
-  const page1 = document.getElementById('page1');
-  const page2 = document.getElementById('page2');
-  const page99 = document.getElementById('page99');
-  const page100 = document.getElementById('page100');
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const ellipsis = document.getElementById("ellipsis");
+  const page1 = document.getElementById("page1");
+  const page2 = document.getElementById("page2");
+  const page99 = document.getElementById("page99");
+  const page100 = document.getElementById("page100");
   try {
     // Set initial page
-  let currentPage = 1;
+    let currentPage = 1;
 
-  // Event listeners for previous and next buttons
-  prevBtn.addEventListener('click', goToPrevPage);
-  nextBtn.addEventListener('click', goToNextPage);
+    // Event listeners for previous and next buttons
+    prevBtn.addEventListener("click", goToPrevPage);
+    nextBtn.addEventListener("click", goToNextPage);
 
-  // Function to go to the previous page
-  function goToPrevPage() {
+    // Function to go to the previous page
+    function goToPrevPage() {
       if (currentPage > 1) {
-          currentPage--;
-          updatePagination();
+        currentPage--;
+        updatePagination();
       }
-  }
+    }
 
-  // Function to go to the next page
-  function goToNextPage() {
+    // Function to go to the next page
+    function goToNextPage() {
       if (currentPage < 100) {
-          currentPage++;
-          updatePagination();
+        currentPage++;
+        updatePagination();
       }
-  }
+    }
 
-  // Function to update the pagination buttons based on the current page
-  function updatePagination() {
+    // Function to update the pagination buttons based on the current page
+    function updatePagination() {
       // Update page buttons
       page1.innerText = currentPage - 1;
       page2.innerText = currentPage;
@@ -822,28 +889,28 @@ class="selectArea"                 coords="262,65,259,79,285,89,288,131,263,133,
 
       // Hide or show ellipsis
       if (currentPage === 1) {
-          ellipsis.style.display = 'none';
+        ellipsis.style.display = "none";
       } else {
-          ellipsis.style.display = 'inline-block';
+        ellipsis.style.display = "inline-block";
       }
 
       // Disable previous and next buttons at first and last pages
       if (currentPage === 1) {
-          prevBtn.disabled = true;
+        prevBtn.disabled = true;
       } else {
-          prevBtn.disabled = false;
+        prevBtn.disabled = false;
       }
 
       if (currentPage === 100) {
-          nextBtn.disabled = true;
+        nextBtn.disabled = true;
       } else {
-          nextBtn.disabled = false;
+        nextBtn.disabled = false;
       }
-  }
+    }
   } catch (error) {
     console.log("the element is not existe");
   }
-  
+
   const profileImage = document.getElementById("profileImage");
   try {
     profileImage.addEventListener("change", (event) => {
