@@ -3169,6 +3169,10 @@ html {
   height: auto;
 }
 
+.h-\[500px\] {
+  height: 500px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -3347,6 +3351,14 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[30\%\] {
+  width: 30%;
+}
+
+.w-\[35\%\] {
+  width: 35%;
 }
 
 .min-w-\[323px\] {
@@ -3965,6 +3977,11 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-error {
+  --tw-text-opacity: 1;
+  color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
+}
+
 .opacity-50 {
   opacity: 0.5;
 }
@@ -4318,6 +4335,10 @@ input[type="number"]::-webkit-inner-spin-button,
     gap: 2rem;
   }
 
+  .sm\:gap-\[1rem\] {
+    gap: 1rem;
+  }
+
   .sm\:px-\[1\.3rem\] {
     padding-left: 1.3rem;
     padding-right: 1.3rem;
@@ -4611,6 +4632,10 @@ input[type="number"]::-webkit-inner-spin-button,
     height: 170px;
   }
 
+  .lg\:h-\[500px\] {
+    height: 500px;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4724,10 +4749,6 @@ input[type="number"]::-webkit-inner-spin-button,
 
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:text-center {
-    text-align: center;
   }
 
   .xl\:text-\[1\.5rem\] {

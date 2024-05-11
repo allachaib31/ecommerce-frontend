@@ -931,7 +931,19 @@ addToCarteFunction();
   } catch (error) {
     console.log("the element is not existe");
   }
-
+  const cancelCheckBoxBtn = document.getElementById("cancelCheckBoxBtn");
+  try {
+    cancelCheckBoxBtn.addEventListener("click",() =>{
+      const cancelCheck = document.querySelectorAll(".cancelCheck");
+      console.log(cancelCheck)
+      cancelCheck.forEach((btn) =>{
+        console.log(btn)
+        btn.checked = false;
+      })
+    })
+  } catch (error) {
+    console.log("the element is not existe");
+  }
   const upload = document.getElementById("upload");
   try {
     upload.addEventListener("change", (event) => {
