@@ -141,6 +141,38 @@ window.onload = () => {
   } catch (error) {
     console.log("the element is not existe");
   }
+  const typeMachineBtn = document.querySelectorAll(".typeMachineBtn");
+  const typeMachineBtn2 = document.querySelectorAll(".typeMachineBtn2");
+  try {
+    let lastBtnActive;
+    let lastBtnActive2;
+    typeMachineBtn.forEach((btn,index) => {
+      btn.addEventListener("click",() => {
+        if(lastBtnActive == undefined){
+          btn.classList.add("bg-active")
+          lastBtnActive = index;
+          return;
+        }
+        btn.classList.add("bg-active")
+        typeMachineBtn[lastBtnActive].classList.remove("bg-active");
+        lastBtnActive = index;
+      })
+    })
+    typeMachineBtn2.forEach((btn,index) => {
+      btn.addEventListener("click",() => {
+        if(lastBtnActive2 == undefined){
+          btn.classList.add("bg-active")
+          lastBtnActive2 = index;
+          return;
+        }
+        btn.classList.add("bg-active")
+        typeMachineBtn2[lastBtnActive2].classList.remove("bg-active");
+        lastBtnActive2 = index;
+      })
+    })
+  } catch (error) {
+    console.log("the element is not existe");
+  }
   const filter = document.getElementById("filter");
   try {
     filter.addEventListener("click", () => {
