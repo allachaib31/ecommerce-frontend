@@ -2599,14 +2599,6 @@ html {
   border-top-width: 4px;
 }
 
-.btn-xs {
-  height: 1.5rem;
-  min-height: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-size: 0.75rem;
-}
-
 .btn-sm {
   height: 2rem;
   min-height: 2rem;
@@ -2615,29 +2607,9 @@ html {
   font-size: 0.875rem;
 }
 
-.btn-md {
-  height: 3rem;
-  min-height: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-}
-
-.btn-square:where(.btn-xs) {
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 0px;
-}
-
 .btn-square:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
-  padding: 0px;
-}
-
-.btn-square:where(.btn-md) {
-  height: 3rem;
-  width: 3rem;
   padding: 0px;
 }
 
@@ -2886,6 +2858,10 @@ html {
   border-bottom-left-radius: 0px;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -2896,6 +2872,10 @@ html {
 
 .left-0 {
   left: 0px;
+}
+
+.left-5 {
+  left: 1.25rem;
 }
 
 .left-\[-60\%\] {
@@ -2920,6 +2900,14 @@ html {
 
 .left-full {
   left: 100%;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .top-2 {
@@ -2948,18 +2936,6 @@ html {
 
 .top-\[92\%\] {
   top: 92%;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.right-5 {
-  right: 1.25rem;
-}
-
-.top-1\/2 {
-  top: 50%;
 }
 
 .z-20 {
@@ -3055,6 +3031,10 @@ html {
 
 .mt-\[8rem\] {
   margin-top: 8rem;
+}
+
+.mr-\[30\%\] {
+  margin-right: 30%;
 }
 
 .block {
@@ -3177,6 +3157,10 @@ html {
   height: 32px;
 }
 
+.h-\[438vh\] {
+  height: 438vh;
+}
+
 .h-\[44px\] {
   height: 44px;
 }
@@ -3209,8 +3193,12 @@ html {
   height: auto;
 }
 
-.h-\[438vh\] {
-  height: 438vh;
+.h-\[200vh\] {
+  height: 200vh;
+}
+
+.max-h-\[377vh\] {
+  max-height: 377vh;
 }
 
 .min-h-screen {
@@ -3399,6 +3387,10 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[150px\] {
+  width: 150px;
 }
 
 .min-w-\[323px\] {
@@ -4340,6 +4332,10 @@ input[type="number"]::-webkit-inner-spin-button,
     width: 227px;
   }
 
+  .sm\:w-\[300px\] {
+    width: 300px;
+  }
+
   .sm\:w-\[50\%\] {
     width: 50%;
   }
@@ -4360,8 +4356,8 @@ input[type="number"]::-webkit-inner-spin-button,
     width: 100%;
   }
 
-  .sm\:w-\[300px\] {
-    width: 300px;
+  .sm\:w-\[200px\] {
+    width: 200px;
   }
 
   .sm\:max-w-xs {
